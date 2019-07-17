@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="gnome-shell-extensions">
+  <schema path="/org/gnome/shell/extensions/nocturnal/" id="org.gnome.shell.extensions.nocturnal">
+    <key type="s" name="light-theme">
+      <default>"Adwaita"</default>
+      <summary>Light Theme</summary>
+      <description>You can create a gist from https://gist.github.com/ and use it's id</description>
+    </key>
+    <key type="s" name="dark-theme">
+      <default>"Adwaita-dark"</default>
+      <summary>Dark Theme</summary>
+      <description>Generate a new token from https://github.com/settings/tokens/new with gist permission and use it</description>
+    </key>
+  </schema>
+</schemalist>
