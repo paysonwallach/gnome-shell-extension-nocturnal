@@ -13,8 +13,6 @@ const Gio = imports.gi.Gio;
 const Gtk = imports.gi.Gtk;
 
 const { getSettings } = nocturnal.imports.convenience;
-//const { logger } = extensionsSync.imports.utils;
-//const debug = logger('preferences');
 
 const PreferencesWidget = class PreferencesWidget {
   constructor() {
