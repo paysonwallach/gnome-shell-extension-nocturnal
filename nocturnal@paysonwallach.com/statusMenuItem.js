@@ -7,10 +7,13 @@
  * (https://gnu.org/licenses/gpl.html)
  */
 
+const Gio = imports.gi.Gio;
 const St = imports.gi.St;
 
 const Main = imports.ui.main;
 const PanelMenu = imports.ui.panelMenu;
+
+const { joinPaths } = nocturnal.imports.utils;
 
 const StatusMenuItem = class StatusMenuItem {
   constructor(themeManager) {
@@ -19,9 +22,12 @@ const StatusMenuItem = class StatusMenuItem {
 
   enable() {
     this.button = new PanelMenu.Button(0);
-
+    const gIcon = Gio.icon_new_for_string(joinPaths([
+        nocturnal.dir.get_child('icons').get_path(),
+        'nocturnal.svg'
+    ]));
     const icon = new St.Icon({
-      icon_name: 'weather-clear-night-symbolic',
+      gicon: gIcon,
       style_class: 'system-status-icon'
     });
 
