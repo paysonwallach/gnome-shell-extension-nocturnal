@@ -23,25 +23,25 @@ const PreferencesWidget = class PreferencesWidget {
         object.connect(signal, this[handler].bind(this));
       });
 
-      const settingsBox = this.builder.get_object('theme-settings');
+      const settingsBox = this.builder.get_object("theme-settings");
 
-      this.lightThemeEntry = this.builder.get_object('light-theme-entry');
-      this.darkThemeEntry = this.builder.get_object('dark-theme-entry');
+      this.lightThemeEntry = this.builder.get_object("light-theme-entry");
+      this.darkThemeEntry = this.builder.get_object("dark-theme-entry");
 
       this.widget.pack_start(settingsBox, true, true, 0);
-      const lightTheme = this.settings.get_string('light-theme');
+      const lightTheme = this.settings.get_string("light-theme");
       this.lightThemeEntry.set_text(lightTheme);
 
-      const darkTheme = this.settings.get_string('dark-theme');
+      const darkTheme = this.settings.get_string("dark-theme");
       this.darkThemeEntry.set_text(darkTheme);
   }
 
   onSave() {
     const lightTheme = this.lightThemeEntry.get_text();
-    this.settings.set_string('light-theme', lightTheme.trim());
+    this.settings.set_string("light-theme", lightTheme.trim());
 
     const darkTheme = this.darkThemeEntry.get_text();
-    this.settings.set_string('dark-theme', darkTheme.trim());
+    this.settings.set_string("dark-theme", darkTheme.trim());
 
     this.onClose();
   }

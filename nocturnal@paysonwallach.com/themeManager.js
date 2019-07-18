@@ -12,18 +12,18 @@ const Gio = imports.gi.Gio;
 const { getSettings } = nocturnal.imports.convenience;
 const { joinPaths } = nocturnal.imports.utils;
 
-const GTK_SCHEMA_KEY = 'org.gnome.desktop.interface';
-const SHELL_THEME_EXTENSION_NAME = 'user-theme@gnome-shell-extensions.gcampax.github.com';
-const SHELL_THEME_EXTENSION_SCHEMA = 'org.gnome.shell.extensions.user-theme';
-const GTK_THEME_KEY = 'gtk-theme';
-const SHELL_THEME_KEY = 'name';
+const GTK_SCHEMA_KEY = "org.gnome.desktop.interface";
+const SHELL_THEME_EXTENSION_NAME = "user-theme@gnome-shell-extensions.gcampax.github.com";
+const SHELL_THEME_EXTENSION_SCHEMA = "org.gnome.shell.extensions.user-theme";
+const GTK_THEME_KEY = "gtk-theme";
+const SHELL_THEME_KEY = "name";
 
 const ThemeManager = class ThemeManager {
   constructor() {
     const shellThemeSchemaDir = joinPaths([
       nocturnal.dir.get_parent().get_path(),
       SHELL_THEME_EXTENSION_NAME,
-      'schemas'
+      "schemas"
     ]);
     const schemaSource = new Gio.SettingsSchemaSource(
       shellThemeSchemaDir,
@@ -45,8 +45,8 @@ const ThemeManager = class ThemeManager {
   }
 
   toggleTheme() {
-    this.lightTheme = this.settings.get_string('light-theme');
-    this.darkTheme = this.settings.get_string('dark-theme');
+    this.lightTheme = this.settings.get_string("light-theme");
+    this.darkTheme = this.settings.get_string("dark-theme");
 
     const gtk_theme = this.gtkSettings.get_string(GTK_THEME_KEY) === this.lightTheme ?
       this.darkTheme :
