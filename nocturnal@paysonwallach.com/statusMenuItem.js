@@ -7,6 +7,7 @@
  * (https://gnu.org/licenses/gpl.html)
  */
 
+const Atk = imports.gi.Atk;
 const Gio = imports.gi.Gio;
 const St = imports.gi.St;
 
@@ -21,7 +22,12 @@ const StatusMenuItem = class StatusMenuItem {
   }
 
   enable() {
-    this.button = new PanelMenu.Button(0);
+    this.button = new PanelMenu.Button(0,
+                                       nocturnal.metadata["name"],
+                                       true
+                                       );
+    this.button.accessible_role = Atk.Role.TOGGLE_BUTTON;
+
     const gIcon = Gio.icon_new_for_string(joinPaths([
         nocturnal.dir.get_child("icons").get_path(),
         "nocturnal-symbolic.svg"
