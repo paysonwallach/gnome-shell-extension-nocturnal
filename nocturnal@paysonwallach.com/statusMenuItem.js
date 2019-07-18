@@ -23,17 +23,18 @@ const StatusMenuItem = class StatusMenuItem {
   enable() {
     this.button = new PanelMenu.Button(0);
     const gIcon = Gio.icon_new_for_string(joinPaths([
-        nocturnal.dir.get_child('icons').get_path(),
-        'nocturnal.svg'
+        nocturnal.dir.get_child("icons").get_path(),
+        "nocturnal-symbolic.svg"
     ]));
     const icon = new St.Icon({
       gicon: gIcon,
-      style_class: 'system-status-icon'
+      style_class: "system-status-icon"
     });
 
-    this.button.actor.add_actor(icon);
-    this.button.actor.connect('button-press-event', () => this.themeManager.toggleTheme());
-    Main.panel.addToStatusArea('nocturnal-status-item', this.button);
+    this.button.add_actor(icon);
+    this.button.add_style_class_name("panel-status-button");
+    this.button.connect("button-press-event", () => this.themeManager.toggleTheme());
+    Main.panel.addToStatusArea("nocturnal-status-item", this.button);
   }
 
   disable() {
