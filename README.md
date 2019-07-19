@@ -44,5 +44,9 @@ ninja -C build install-zip
 ```
 
 ## Contributing
+
 Pull requests are welcome! For major changes, please open an issue first to discuss the matter.
 
+## License
+
+[Nocturnal](https://github.com/paysonwallach/nocturnal) is licensed under the [GNU General Public License v3.0](https://github.com/paysonwallach/nocturnal/blob/master/LICENSE).
