@@ -1,12 +1,23 @@
-# Nocturnal
-
-Toggle between day and night with ease.
+<div align="center">
+ <h1>Nocturnal</h1>
+ <p>Toggle between day and night with ease</p>
+ <a href=https://github.com/paysonwallach/nocturnal/release/latest>
+   <img src=https://img.shields.io/github/v/release/paysonwallach/nocturnal?style=flat-square>
+ </a>
+ <a href=https://github.com/paysonwallach/nocturnal/blob/master/LICENSE>
+   <img src=https://img.shields.io/github/license/paysonwallach/nocturnal?style=flat-square>
+ </a>
+ <a href=https://buymeacoffee.com/paysonwallach>
+   <img src=https://img.shields.io/badge/donate-Buy%20me%20a%20coffe-yellow?style=flat-square>
+ </a>
+ <br>
+</div>
 
 ## Installation
 
 ### From Zip
 
-1. **Download the [Latest Release][latest-release]**
+1. **Download the [Latest Release](https://github.com/paysonwallach/nocturnal/releases/latest)**
 
 2. **Extract the extension**
 
