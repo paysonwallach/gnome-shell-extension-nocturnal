@@ -8,9 +8,9 @@
  */
 
 const Gio = imports.gi.Gio;
+const GLib = imports.gi.GLib;
 
 const { getSettings } = nocturnal.imports.convenience;
-const { joinPaths } = nocturnal.imports.utils;
 
 const GTK_SCHEMA_KEY = "org.gnome.desktop.interface";
 const SHELL_THEME_EXTENSION_NAME = "user-theme@gnome-shell-extensions.gcampax.github.com";
@@ -20,7 +20,7 @@ const SHELL_THEME_KEY = "name";
 
 const ThemeManager = class ThemeManager {
   constructor() {
-    const shellThemeSchemaDir = joinPaths([
+    const shellThemeSchemaDir = GLib.build_filenamev([
       nocturnal.dir.get_parent().get_path(),
       SHELL_THEME_EXTENSION_NAME,
       "schemas"

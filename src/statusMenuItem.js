@@ -14,8 +14,6 @@ const St = imports.gi.St;
 const Main = imports.ui.main;
 const PanelMenu = imports.ui.panelMenu;
 
-const { joinPaths } = nocturnal.imports.utils;
-
 const StatusMenuItem = class StatusMenuItem {
   constructor(themeManager) {
     this.themeManager = themeManager;
@@ -23,15 +21,12 @@ const StatusMenuItem = class StatusMenuItem {
 
   enable() {
     this.button = new PanelMenu.Button(0,
-                                       nocturnal.metadata["name"],
-                                       true
-                                       );
+      nocturnal.metadata["name"],
+      true
+    );
     this.button.accessible_role = Atk.Role.TOGGLE_BUTTON;
 
-    const gIcon = Gio.icon_new_for_string(joinPaths([
-        nocturnal.dir.get_child("icons").get_path(),
-        "nocturnal-symbolic.svg"
-    ]));
+    const gIcon = Gio.icon_new_for_string("resource:///org/gnome/shell/extensions/nocturnal/icons/nocturnal-symbolic.svg")
     const icon = new St.Icon({
       gicon: gIcon,
       style_class: "system-status-icon"

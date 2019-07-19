@@ -11,15 +11,17 @@ window.nocturnal = imports.misc.extensionUtils.getCurrentExtension();
 
 const Gio = imports.gi.Gio;
 const Gtk = imports.gi.Gtk;
+const GLib = imports.gi.GLib;
 
-const { getSettings } = nocturnal.imports.convenience;
+const { getSettings, registerResources } = nocturnal.imports.convenience;
 
 const PreferencesWidget = class PreferencesWidget {
   constructor() {
+      registerResources();
       this.settings = getSettings();
       this.widget = new Gtk.Box();
-      this.builder = Gtk.Builder.new_from_file(nocturnal.dir.get_path() + "/ui/settings.glade");
-      this.builder.connect_signals_full((builder, object, signal, handler) => {
+      this.builder = Gtk.Builder.new_from_resource("/org/gnome/shell/extensions/nocturnal/ui/settings.ui");
+      this.builder.connect_signals_full((_, object, signal, handler) => {
         object.connect(signal, this[handler].bind(this));
       });
 

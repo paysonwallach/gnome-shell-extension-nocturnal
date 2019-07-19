@@ -10,6 +10,7 @@
 const Gettext = imports.gettext;
 
 const Gio = imports.gi.Gio;
+const GLib = imports.gi.GLib;
 
 const Config = imports.misc.config;
 const ExtensionUtils = imports.misc.extensionUtils;
@@ -33,6 +34,26 @@ function initTranslations(domain) {
     Gettext.bindtextdomain(domain, localeDir.get_path());
   else
     Gettext.bindtextdomain(domain, Config.LOCALEDIR);
+}
+
+/**
+ * registerResources:
+ * @bundleID: (optional): the gresource bundle id
+ *
+ * Loads and registers a gresource bundle for @bundleID. If @bundleID is not
+ * provided, it is taken from metadata["settings-schema"].
+ */
+function registerResources(bundleID) {
+  let extension = ExtensionUtils.getCurrentExtension();
+
+  bundleID = bundleID || extension.metadata["settings-schema"];
+
+  Gio.Resource.load(
+    GLib.build_filenamev([
+      extension.dir.get_path(),
+      bundleID + ".gresource"
+    ])
+  )._register();
 }
 
 /**

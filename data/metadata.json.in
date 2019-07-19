@@ -5,8 +5,8 @@
   "shell-version": [
     "3.32"
   ],
-  "settings-schema": "org.gnome.shell.extensions.nocturnal",
+  "settings-schema": "@APP_ID@",
   "url": "https://github.com/paysonwallach/nocturnal",
-  "uuid": "nocturnal@paysonwallach.com",
-  "version": 2
+  "uuid": "@UUID@",
+  "version": @VERSION@
 }
