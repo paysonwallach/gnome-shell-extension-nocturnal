@@ -47,6 +47,10 @@ ninja -C build install-zip
 
 Pull requests are welcome! For major changes, please open an issue first to discuss the matter.
 
+## Code of Conduct
+
+By participating in this project, you agree to abide by the terms of the [Code of Conduct](https://github.com/paysonwallach/nocturnal/blob/master/CODE_OF_CONDUCT.md).
+
 ## License
 
 [Nocturnal](https://github.com/paysonwallach/nocturnal) is licensed under the [GNU General Public License v3.0](https://github.com/paysonwallach/nocturnal/blob/master/LICENSE).
