@@ -17,30 +17,44 @@
 
 ### From Zip
 
-1. **Download the [Latest Release](https://github.com/paysonwallach/nocturnal/releases/latest)**
+Download the [latest release](https://github.com/paysonwallach/nocturnal/releases/latest), and extract the extension:
 
-2. **Extract the extension**
+```sh
+rm -rf ~/.local/share/gnome-shell/extensions/nocturnal@paysonwallach.com
+unzip -o nocturnal@paysonwallach.com.zip -d ~/.local/share/gnome-shell/extensions/nocturnal@paysonwallach.com
+```
 
-   ```sh
-   mkdir -p ~/.local/share/gnome-shell/extensions
-   rm -rf ~/.local/share/gnome-shell/extensions/nocturnal@paysonwallach.com
-   unzip -o nocturnal@paysonwallach.com.zip -d ~/.local/share/gnome-shell/extensions/nocturnal@paysonwallach.com
-   ```
+### From source using [`meson`](http://mesonbuild.com/)
 
-3. **Restart Gnome Shell**
-
-   * **X11/Xorg:** <kbd>Alt</kbd> + <kbd>F2</kbd> + `restart` or `r`
-   * **Wayland:** Log out and log in.
-
-### From Git
-
-You can build or install from git with [Meson](http://mesonbuild.com/):
+Clone this repository or download the [latest release](https://github.com/paysonwallach/nocturnal/releases/latest).
 
 ```sh
 git clone https://github.com/paysonwallach/nocturnal.git
-cd nocturnal/
+```
+
+Configure the build directory at the root of the project.
+
+```sh
 meson --prefix=$HOME/.local build
-ninja -C build install-zip
+```
+
+Install with `ninja`.
+
+```sh
+ninja -C build install
+```
+
+## Loading the extension
+
+Restart GNOME shell.
+
+- **X11/Xorg:** <kbd>Alt</kbd> + <kbd>F2</kbd> + `restart` or `r`
+- **Wayland:** Log out and log back in
+
+Enable the extension with [GNOME Tweaks](https://gitlab.gnome.org/GNOME/gnome-tweaks) or `gnome-extensions`.
+
+```sh
+gnome-extensions enable nocturnal@paysonwallach.com
 ```
 
 ## Contributing
